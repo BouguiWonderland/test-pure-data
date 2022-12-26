@@ -1,0 +1,15 @@
+#N canvas 952 0 958 966 12;
+#X obj 142 248 route list;
+#X obj 142 200 oscparse;
+#X obj 142 348 print answer;
+#X obj 142 153 netreceive -u -b 3001;
+#X text 333 198 Parsing des messages OSC;
+#X text 331 298 Extraction de la donnée voulue grâce au chemin désiré du message OSC;
+#X text 331 354 Affichage dans la console de la réponse;
+#X text 332 153 Réception des messages OSC sur le port 3001 en UDP;
+#X text 143 52 Patch mettant en place un serveur d'écoute UDP et de traitement des messages OSC reçus;
+#X obj 142 298 route reponse;
+#X connect 0 0 9 0;
+#X connect 1 0 0 0;
+#X connect 3 0 1 0;
+#X connect 9 0 2 0;
